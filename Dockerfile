@@ -5,7 +5,7 @@ COPY Makefile .
 RUN make
 RUN make install
 
-FROM alpine:latest
+FROM scratch
 WORKDIR /root/
 COPY --from=builder /root/spectre .
 CMD ["./spectre"]
